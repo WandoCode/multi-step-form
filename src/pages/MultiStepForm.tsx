@@ -43,7 +43,7 @@ function MultiStepForm(): JSX.Element {
 
   return (
     <div className="multi-step-form">
-      <StepList />
+      <StepList currStep={formStep} />
       {formStep === 1 && (
         <PersonalInfos
           currDatas={datas.personalInfos}
