@@ -1,36 +1,32 @@
 @use './mixins' as *;
+@use './functions' as *;
 
 $scale: (
   sm: (
-    300: 1rem,
-    400: 1.125rem,
-    500: 1.563rem,
-    600: 1.953rem,
-    700: 2.441rem,
-    800: 3.052rem,
+    300: rem(12),
+    400: rem(14),
+    500: rem(15),
+    600: rem(16),
+    700: rem(24),
   ),
   lg: (
-    300: 1rem,
-    400: 1.425rem,
-    500: 2rem,
-    600: 2.827rem,
-    700: 4rem,
-    800: 3.052rem,
+    200: rem(12),
+    300: rem(14),
+    400: rem(16),
+    600: rem(20),
+    700: rem(32),
   ),
 );
 
 $weights: (
-  light: 300,
-  normal: 400,
-  bold: 600,
+  light: 400,
+  normal: 500,
+  bold: 700,
 );
 
 :root {
   /// Build css custom variables for font-size
   /// It integer a media query for each font (mobile-first)
-  /// Une autre solution serait d'utiliser clamp()
-  /// ==> clamp(valFixMinEnREM, valFixEnREMPlusValEnVW, valFixMaxEnREM)
-  /// ==> valFixMinEnREM sont les valeur pour 'small' et valFixMaxEnREM sont les valeurs pour 'large'
   @each $screen-size, $font-size in $scale {
     @each $size, $value in $font-size {
       --fs-#{$screen-size}-#{$size}: #{$value};
