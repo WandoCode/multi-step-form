@@ -46,7 +46,7 @@
 .hide-on-mobile {
   display: none;
 
-  @include breakpoint(medium) {
+  @include breakpoint(large) {
     display: block;
   }
 }

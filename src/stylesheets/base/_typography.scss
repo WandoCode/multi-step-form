@@ -13,4 +13,62 @@ body {
 .h1 {
   font-weight: var(--fw-bold);
   color: var(--clr-primary-700);
+  font-size: var(--fs-sm-700);
+
+  @include breakpoint(large) {
+    font-size: var(--fs-lg-700);
+    line-height: 1;
+  }
+}
+
+.step-item {
+  &__step {
+    font-size: var(--fs-lg-200);
+    font-weight: var(--fw-light);
+    color: var(--clr-primary-300);
+  }
+  &__description {
+    color: var(--clr-neutral-100);
+    font-size: var(--fs-lg-300);
+  }
+}
+
+.custom-form {
+  & label {
+    font-size: var(--fs-sm-300);
+    color: var(--clr-primary-700);
+    @include breakpoint(large) {
+      font-size: var(--fs-lg-400);
+    }
+  }
+
+  & input {
+    font-size: var(--fs-sm-500);
+    font-weight: var(--fw-normal);
+    color: var(--clr-primary-700);
+
+    @include breakpoint(large) {
+      font-size: var(--fs-lg-400);
+    }
+    &::placeholder {
+      color: var(--clr-neutral-500);
+      @include breakpoint(large) {
+        font-size: var(--fs-lg-400);
+      }
+    }
+  }
+}
+
+.btn {
+  color: var(--clr-neutral-100);
+  font-size: var(--fs-sm-400);
+  font-weight: var(--fw-normal);
+
+  @include breakpoint(large) {
+    font-size: var(--fs-lg-400);
+  }
+
+  &--light {
+    color: var(--clr-neutral-500);
+  }
 }

@@ -1,0 +1,62 @@
+@use '../abstracts' as *;
+
+.custom-form {
+  display: grid;
+  align-content: start;
+
+  gap: rem(22);
+  padding: rem(32) rem(24);
+  margin-inline: auto;
+  width: 100%;
+  max-width: calc(100% - 2rem);
+  background-color: var(--clr-neutral-100);
+  border-radius: rem(10);
+
+  box-shadow: 0px 25px 40px -20px hsla(0, 0%, 0%, 0.1);
+
+  @include breakpoint(large) {
+    background-color: transparent;
+    box-shadow: none;
+    gap: rem(35);
+    margin-inline: rem(100);
+    padding: 0;
+    padding-top: rem(32);
+  }
+
+  &__heading {
+    display: grid;
+    @include breakpoint(large) {
+      gap: rem(11);
+    }
+  }
+
+  &__nav-controler {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--clr-neutral-100);
+    box-shadow: 0px 25px 40px 0px hsla(0, 0%, 0%, 0.1);
+    padding: 1rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include breakpoint(large) {
+      position: static;
+      padding: 0;
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  &__left-btn {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  &__right-btn {
+    grid-column: 2;
+    justify-self: end;
+  }
+}

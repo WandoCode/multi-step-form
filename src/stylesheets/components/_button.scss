@@ -4,6 +4,27 @@
 
 @use '../abstracts/' as *;
 
-.button {
-  background-color: red;
+.btn {
+  background-color: var(--clr-primary-700);
+  border: none;
+  border-radius: rem(4);
+  padding: rem(12) rem(16);
+
+  @include breakpoint(large) {
+    border-radius: rem(8);
+    padding: rem(15) rem(24);
+  }
+
+  &--confirm {
+    padding: rem(12) rem(22);
+    background-color: var(--clr-primary-400);
+
+    @include breakpoint(large) {
+      padding: rem(15) rem(31);
+    }
+  }
+  &--light {
+    background-color: transparent;
+    padding: 0;
+  }
 }

@@ -2,6 +2,8 @@
 
 .step-item {
   font-weight: var(--fw-bold);
+  display: flex;
+  gap: 1rem;
   &__number {
     height: 2rem;
     width: 2rem;

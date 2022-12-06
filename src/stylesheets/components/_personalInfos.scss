@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+.personal-info {
+  display: grid;
+  gap: 1rem;
+
+  @include breakpoint(large) {
+    gap: rem(24);
+  }
+
+  & .form-control {
+    display: grid;
+    gap: rem(3);
+  }
+
+  & input {
+    border: 1px solid var(--clr-neutral-400);
+    border-radius: rem(4);
+    padding: rem(11) 1rem;
+
+    &:focus {
+      outline: none;
+      border-color: var(--clr-primary-400);
+    }
+  }
+}
