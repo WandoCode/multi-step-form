@@ -1,6 +1,8 @@
 @use '../abstracts' as *;
+
 .step-list {
   position: relative;
+  min-width: 30%;
 
   &__container {
     display: flex;
@@ -9,11 +11,35 @@
     width: 50%;
     min-height: rem(100);
     margin-inline: auto;
+
+    @include breakpoint(large) {
+      width: calc(100% - 4rem);
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-top: rem(40);
+    }
   }
 
   &:before {
     position: absolute;
-    content: url('../../../assets/images/bg-sidebar-mobile.svg');
+    content: '';
+
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: -70%;
+
+    background-image: url('../../../assets/images/bg-sidebar-mobile.svg');
+    background-size: cover;
+
     z-index: -1;
+    @include breakpoint(large) {
+      content: none;
+    }
+  }
+  @include breakpoint(large) {
+    background-image: url('../../../assets/images/bg-sidebar-desktop.svg');
+    background-repeat: no-repeat;
   }
 }

@@ -1,7 +1,10 @@
 @use './functions' as *;
+@use './mixins' as *;
 
 /// Regular font family
 $text-font: 'Ubuntu', sans-serif !default;
 
 /// Container's maximum width
 $max-width: rem(343);
+$max-width-destop: rem(940);
+$max-height-destop: rem(600);

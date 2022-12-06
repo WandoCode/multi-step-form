@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 .step-item {
   font-weight: var(--fw-bold);
   &__number {

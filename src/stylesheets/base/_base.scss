@@ -39,6 +39,15 @@ body {
   background-color: var(--clr-neutral-300);
 }
 
-#root {
+#root,
+main {
   min-height: inherit;
+}
+
+main {
+  @include breakpoint(large) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

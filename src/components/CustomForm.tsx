@@ -31,14 +31,14 @@ function CustomForm({
 
   return (
     <div className="custom-form">
-      <h1>{title}</h1>
+      <h1 className="h1">{title}</h1>
 
       <p>{description}</p>
 
-      <form className="personal-infos__form" onSubmit={handleGoNext}>
+      <form className="custom-form__form" onSubmit={handleGoNext}>
         {children}
 
-        <div className="form-nav-controler">
+        <div className="custom-form__nav-controler">
           {showCancelButton && <button onClick={handleGoBack}>Go Back</button>}
 
           {showConfirmButton ? (
