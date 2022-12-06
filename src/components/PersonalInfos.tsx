@@ -36,6 +36,7 @@ function PersonalInfos({
       description={description}
       onClickNextStep={submitForm}
       onClickPrecStep={cancelForm}
+      showCancelButton={false}
     >
       <div className="form-control">
         <label htmlFor="name">Name</label>

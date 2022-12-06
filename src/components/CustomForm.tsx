@@ -5,6 +5,7 @@ interface propsTypes {
   onClickPrecStep: () => void
   children: React.ReactNode
   showCancelButton?: boolean
+  showConfirmButton?: boolean
 }
 
 function CustomForm({
@@ -14,6 +15,7 @@ function CustomForm({
   onClickPrecStep,
   children,
   showCancelButton = true,
+  showConfirmButton = false,
 }: propsTypes): JSX.Element {
   const handleGoBack = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault()
@@ -38,7 +40,13 @@ function CustomForm({
 
         <div className="form-nav-controler">
           {showCancelButton && <button onClick={handleGoBack}>Go Back</button>}
-          <button type="submit">Next Step</button>
+          {showConfirmButton ? (
+            <button type="submit" className="btn--confirm">
+              Confirm
+            </button>
+          ) : (
+            <button type="submit">Next Step</button>
+          )}
         </div>
       </form>
     </div>
