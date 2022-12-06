@@ -16,18 +16,17 @@ function MultiStepForm(): JSX.Element {
   const [datas, setDatas] = useState<FormDatasType>({})
 
   const goToNextStep = (
-    currStep: number,
     formDatas: formDatasTypes,
     formTarget: formTargetType
   ) => {
     saveFormDatas(formDatas, formTarget)
 
-    const newStep = currStep <= 5 ? currStep + 1 : 5
+    const newStep = formStep <= 5 ? formStep + 1 : 5
     setFormStep(newStep)
   }
 
-  const goToPrecStep = (currStep: number) => {
-    const newStep = currStep > 1 ? currStep - 1 : 1
+  const goToPrecStep = () => {
+    const newStep = formStep > 1 ? formStep - 1 : 1
     setFormStep(newStep)
   }
 

@@ -33,12 +33,8 @@ type formDatasTypes =
   | SummaryTypes
 
 interface FormProps {
-  onFormSubmit: (
-    currStep: number,
-    formDatas: formDatasTypes,
-    formTarget: formTargetType
-  ) => void
-  onGoBack: (currStep: number) => void
+  onFormSubmit: (formDatas: formDatasTypes, formTarget: formTargetType) => void
+  onGoBack: () => void
   currDatas?: formDatasTypes | undefined
   allDatas?: FormDatasType
 }
