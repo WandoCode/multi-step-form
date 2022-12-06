@@ -3,7 +3,7 @@ import { FormProps, PersonalInfosTypes } from '../types/multiStepFormTypes'
 import CustomForm from './CustomForm'
 
 function PersonalInfos({
-  onFormSubmit,
+  onGoNext,
   onGoBack,
   currDatas, // TODO: quand on clique sur "go back", il faut que le formulaire soit rempli par les infos données par l'utilisateur juste avant.
 }: FormProps): JSX.Element {
@@ -23,7 +23,7 @@ function PersonalInfos({
       phone,
     }
 
-    onFormSubmit(datas, 'personalInfos')
+    onGoNext(datas, 'personalInfos')
   }
 
   const cancelForm = () => {

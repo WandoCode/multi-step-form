@@ -46,28 +46,28 @@ function MultiStepForm(): JSX.Element {
       {formStep === 1 && (
         <PersonalInfos
           currDatas={datas.personalInfos}
-          onFormSubmit={goToNextStep}
+          onGoNext={goToNextStep}
           onGoBack={goToPrecStep}
         />
       )}
       {formStep === 2 && (
         <SelectPlan
           currDatas={datas.selectPlan}
-          onFormSubmit={goToNextStep}
+          onGoNext={goToNextStep}
           onGoBack={goToPrecStep}
         />
       )}
       {formStep === 3 && (
         <AddOns
           currDatas={datas.addOns}
-          onFormSubmit={goToNextStep}
+          onGoNext={goToNextStep}
           onGoBack={goToPrecStep}
         />
       )}
       {formStep === 4 && (
         <Summary
           allDatas={datas}
-          onFormSubmit={goToNextStep}
+          onGoNext={goToNextStep}
           onGoBack={goToPrecStep}
         />
       )}
