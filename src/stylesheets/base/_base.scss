@@ -34,3 +34,11 @@ a {
     text-decoration: underline;
   }
 }
+
+body {
+  background-color: var(--clr-neutral-300);
+}
+
+#root {
+  min-height: inherit;
+}

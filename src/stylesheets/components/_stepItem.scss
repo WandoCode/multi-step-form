@@ -1,2 +1,24 @@
 .step-item {
+  font-weight: var(--fw-bold);
+  &__number {
+    height: 2rem;
+    width: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: transparent;
+
+    border: 1px solid var(--clr-neutral-100);
+    border-radius: 10rem;
+
+    color: var(--clr-neutral-100);
+
+    &--active {
+      color: var(--clr-primary-700);
+      background-color: var(--clr-primary-200);
+      border-color: var(--clr-primary-200);
+    }
+  }
 }

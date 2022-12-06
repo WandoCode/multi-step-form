@@ -1,5 +1,7 @@
+@use './functions' as *;
+
 /// Regular font family
 $text-font: 'Ubuntu', sans-serif !default;
 
 /// Container's maximum width
-$max-width: 1180px;
+$max-width: rem(343);

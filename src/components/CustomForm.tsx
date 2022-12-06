@@ -40,6 +40,7 @@ function CustomForm({
 
         <div className="form-nav-controler">
           {showCancelButton && <button onClick={handleGoBack}>Go Back</button>}
+
           {showConfirmButton ? (
             <button type="submit" className="btn--confirm">
               Confirm

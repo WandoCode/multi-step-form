@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { FormProps, SummaryTypes } from '../types/multiStepFormTypes'
 import CustomForm from './CustomForm'
 

@@ -22,7 +22,11 @@ function StepList({ currStep }: propsTypes): JSX.Element {
     })
   }, [currStep])
 
-  return <ol className="step-list">{steps}</ol>
+  return (
+    <ol className="step-list">
+      <div className="step-list__container">{steps}</div>
+    </ol>
+  )
 }
 
 export default StepList

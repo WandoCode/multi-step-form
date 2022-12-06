@@ -8,9 +8,13 @@ interface AddonsTypes {
   choices: Array<string>
 }
 
+type planTypes = 'Arcade' | 'Advanced' | 'Pro'
+
+type periodTypes = 'Monthly' | 'Yearly'
+
 interface SelectPlanTypes {
-  plan: 'Arcade' | 'Advanced' | 'Pro'
-  period: 'Monthly' | 'Yearly'
+  plan: planTypes
+  period: periodTypes
 }
 
 interface SummaryTypes {
@@ -48,4 +52,6 @@ export {
   FormDatasType,
   formDatasTypes,
   formTargetType,
+  planTypes,
+  periodTypes,
 }

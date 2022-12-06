@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+.step-list {
+  position: relative;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    min-height: rem(100);
+    margin-inline: auto;
+  }
+
+  &:before {
+    position: absolute;
+    content: url('../../../assets/images/bg-sidebar-mobile.svg');
+    z-index: -1;
+  }
+}
