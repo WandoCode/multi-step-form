@@ -5,18 +5,22 @@
 @use '../abstracts/' as *;
 
 .btn {
-  background-color: var(--clr-primary-700);
-  border: none;
-  border-radius: rem(4);
   padding: rem(12) rem(16);
 
+  background-color: var(--clr-primary-700);
+
+  border: none;
+  border-radius: rem(4);
+
   @include breakpoint(large) {
-    border-radius: rem(8);
     padding: rem(15) rem(24);
+
+    border-radius: rem(8);
   }
 
   &--confirm {
     padding: rem(12) rem(22);
+
     background-color: var(--clr-primary-400);
 
     @include breakpoint(large) {
@@ -24,7 +28,8 @@
     }
   }
   &--light {
-    background-color: transparent;
     padding: 0;
+
+    background-color: transparent;
   }
 }

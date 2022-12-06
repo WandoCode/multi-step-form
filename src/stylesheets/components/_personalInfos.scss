@@ -14,9 +14,10 @@
   }
 
   & input {
+    padding: rem(11) 1rem;
+
     border: 1px solid var(--clr-neutral-400);
     border-radius: rem(4);
-    padding: rem(11) 1rem;
 
     &:focus {
       outline: none;

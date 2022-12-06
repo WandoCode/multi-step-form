@@ -2,6 +2,7 @@
 
 .step-list {
   position: relative;
+
   min-width: 30%;
 
   @include breakpoint(large) {
@@ -13,24 +14,28 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     width: 50%;
     min-height: rem(100);
+
     margin-inline: auto;
 
     @include breakpoint(large) {
       gap: 2rem;
-      width: calc(100% - 4rem);
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
+
+      width: calc(100% - 4rem);
+
       margin-top: rem(40);
     }
   }
 
   &:before {
-    position: absolute;
     content: '';
 
+    position: absolute;
     left: 0;
     right: 0;
     top: 0;

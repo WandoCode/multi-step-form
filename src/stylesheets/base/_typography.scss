@@ -22,14 +22,25 @@ body {
 }
 
 .step-item {
+  font-weight: var(--fw-bold);
+
   &__step {
     font-size: var(--fs-lg-200);
     font-weight: var(--fw-light);
     color: var(--clr-primary-300);
   }
+
   &__description {
     color: var(--clr-neutral-100);
     font-size: var(--fs-lg-300);
+  }
+
+  &__number {
+    color: var(--clr-neutral-100);
+
+    &--active {
+      color: var(--clr-primary-700);
+    }
   }
 }
 
@@ -37,6 +48,7 @@ body {
   & label {
     font-size: var(--fs-sm-300);
     color: var(--clr-primary-700);
+
     @include breakpoint(large) {
       font-size: var(--fs-lg-400);
     }
@@ -50,6 +62,7 @@ body {
     @include breakpoint(large) {
       font-size: var(--fs-lg-400);
     }
+
     &::placeholder {
       color: var(--clr-neutral-500);
       @include breakpoint(large) {
