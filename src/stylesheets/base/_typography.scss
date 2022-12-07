@@ -72,6 +72,18 @@ body {
   }
 }
 
+.personal-info {
+  & .text-error {
+    font-size: var(--fs-sm-400);
+    color: var(--clr-primary-800);
+    font-weight: var(--fw-bold);
+
+    @include breakpoint(large) {
+      font-size: var(--fs-lg-400);
+    }
+  }
+}
+
 .btn {
   color: var(--clr-neutral-100);
   font-size: var(--fs-sm-400);

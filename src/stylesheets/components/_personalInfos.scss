@@ -9,11 +9,20 @@
   }
 
   & .form-control {
+    position: relative;
+
     display: grid;
     gap: rem(3);
+
+    & .text-error {
+      position: absolute;
+      right: 0;
+    }
   }
 
   & input {
+    min-width: 0;
+
     padding: rem(11) 1rem;
 
     border: 1px solid var(--clr-neutral-400);
@@ -22,6 +31,10 @@
     &:focus {
       outline: none;
       border-color: var(--clr-primary-400);
+    }
+
+    &.input-error {
+      border-color: var(--clr-primary-800);
     }
   }
 }
