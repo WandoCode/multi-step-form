@@ -12,9 +12,9 @@ function PersonalInfos({
   onGoBack,
   currDatas,
 }: PersonalInfosProps): JSX.Element {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState('')
+  const [name, setName] = useState('aze')
+  const [email, setEmail] = useState('aze@aze.be')
+  const [phone, setPhone] = useState('+12456789')
   const [errors, setErrors] = useState<string[]>([])
 
   const title = 'Personal Info'
