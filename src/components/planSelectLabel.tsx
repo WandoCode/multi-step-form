@@ -3,7 +3,7 @@ import { formatPrice } from '../utility/helpers'
 interface PlanSelectLabelProps {
   image: string
   title: string
-  price: { [key: string]: number }
+  price: number
   period: string
   tips: string
   id: string

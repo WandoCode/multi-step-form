@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import AddOns from '../components/AddOns'
 import PersonalInfos from '../components/PersonalInfos'
 import SelectPlan from '../components/SelectPlan'
@@ -14,6 +14,25 @@ import {
 function MultiStepForm(): JSX.Element {
   const [formStep, setFormStep] = useState(1)
   const [datas, setDatas] = useState<FormDatasType>({})
+
+  const prices = {
+    Monthly: {
+      Arcade: 9,
+      Advanced: 12,
+      Pro: 15,
+      'Online service': 1,
+      'Larger storage': 2,
+      'Custom profil': 2,
+    },
+    Yearly: {
+      Arcade: 90,
+      Advanced: 120,
+      Pro: 150,
+      'Online service': 10,
+      'Larger storage': 20,
+      'Custom profil': 20,
+    },
+  }
 
   const goToNextStep = (
     formDatas: formDatasTypes,
@@ -56,6 +75,7 @@ function MultiStepForm(): JSX.Element {
           currDatas={datas.selectPlan}
           onGoNext={goToNextStep}
           onGoBack={goToPrecStep}
+          prices={prices}
         />
       )}
       {formStep === 3 && (
@@ -63,6 +83,7 @@ function MultiStepForm(): JSX.Element {
           currDatas={datas.addOns}
           onGoNext={goToNextStep}
           onGoBack={goToPrecStep}
+          prices={prices}
           period={datas.selectPlan?.period}
         />
       )}
@@ -71,6 +92,7 @@ function MultiStepForm(): JSX.Element {
           allDatas={datas}
           onGoNext={goToNextStep}
           onGoBack={goToPrecStep}
+          prices={prices}
         />
       )}
       {formStep === 5 && <ThanksScreen />}

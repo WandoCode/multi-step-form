@@ -23,6 +23,10 @@ interface SummaryTypes {
 
 type formTargetType = 'personalInfos' | 'addOns' | 'selectPlan' | 'summary'
 
+interface pricesType {
+  [key: string]: { [key: string]: number }
+}
+
 interface FormDatasType {
   personalInfos?: PersonalInfosTypes
   addOns?: AddonsTypes
@@ -53,4 +57,5 @@ export {
   formTargetType,
   planTypes,
   periodTypes,
+  pricesType,
 }

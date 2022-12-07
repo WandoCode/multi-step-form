@@ -6,7 +6,7 @@ interface AddonItemTypes {
   title: string
   description: string
   period?: string
-  price: { [key: string]: number }
+  price: number
   checked: boolean
 }
 function AddonItem({

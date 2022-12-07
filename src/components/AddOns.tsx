@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { FormProps, AddonsTypes } from '../types/multiStepFormTypes'
+import { FormProps, AddonsTypes, pricesType } from '../types/multiStepFormTypes'
 import AddonItem from './AddonItem'
 import CustomForm from './CustomForm'
 
 interface AddonsProps extends FormProps {
   currDatas?: AddonsTypes
   period?: string
+  prices: pricesType
 }
 
 function AddOns({
@@ -13,19 +14,20 @@ function AddOns({
   onGoBack,
   currDatas,
   period,
+  prices,
 }: AddonsProps): JSX.Element {
+  period = period ? period : 'Monthly'
   const [choices, setChoices] = useState<string[]>([])
 
   const title = 'Pick add-ons'
   const description = 'Add-ons help enhance your gaming experience.'
-
   const submitForm = () => {
     // TODO: Valid form datas and show errors
     const datas: AddonsTypes = {
       choices,
     }
 
-    onGoNext(datas, 'selectPlan')
+    onGoNext(datas, 'addOns')
   }
 
   const cancelForm = () => {
@@ -72,7 +74,7 @@ function AddOns({
           title="Online service"
           description="Access to multiplayer games"
           period={period}
-          price={{ Monthly: 1, Yearly: 10 }}
+          price={prices[period]['Online service']}
         />
       </div>
       <div className="form-control">
@@ -90,7 +92,7 @@ function AddOns({
           title="Larger storage"
           description="Extra 1TB of cloud save"
           period={period}
-          price={{ Monthly: 2, Yearly: 20 }}
+          price={prices[period]['Larger storage']}
         />
       </div>
       <div className="form-control">
@@ -108,7 +110,7 @@ function AddOns({
           title="Customizable profile"
           description="Custom theme on your profile"
           period={period}
-          price={{ Monthly: 2, Yearly: 20 }}
+          price={prices[period]['Custom profil']}
         />
       </div>
     </CustomForm>

@@ -3,6 +3,7 @@ import {
   FormProps,
   periodTypes,
   planTypes,
+  pricesType,
   SelectPlanTypes,
 } from '../types/multiStepFormTypes'
 import CustomForm from './CustomForm'
@@ -13,12 +14,14 @@ import PlanSelectLabel from './planSelectLabel'
 
 interface SelectPlanProps extends FormProps {
   currDatas?: SelectPlanTypes
+  prices: pricesType
 }
 
 function SelectPlan({
   onGoNext,
   onGoBack,
   currDatas,
+  prices,
 }: SelectPlanProps): JSX.Element {
   const [plan, setPlan] = useState<planTypes>('Arcade')
   const [period, setPeriod] = useState<periodTypes>('Monthly')
@@ -79,7 +82,7 @@ function SelectPlan({
         <PlanSelectLabel
           image={arcadeIcon}
           title="Arcade"
-          price={{ Monthly: 9, Yearly: 90 }}
+          price={prices[period]['Arcade']}
           period={period}
           tips="2 months free"
           id="arcade"
@@ -96,7 +99,7 @@ function SelectPlan({
         <PlanSelectLabel
           image={advancedIcon}
           title="Advanced"
-          price={{ Monthly: 12, Yearly: 120 }}
+          price={prices[period]['Advanced']}
           period={period}
           tips="2 months free"
           id="advanced"
@@ -113,7 +116,7 @@ function SelectPlan({
         <PlanSelectLabel
           image={proIcon}
           title="Pro"
-          price={{ Monthly: 15, Yearly: 150 }}
+          price={prices[period]['Pro']}
           period={period}
           tips="2 months free"
           id="pro"
