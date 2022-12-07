@@ -2,7 +2,11 @@ import { useState } from 'react'
 import { FormProps, AddonsTypes } from '../types/multiStepFormTypes'
 import CustomForm from './CustomForm'
 
-function AddOns({ onGoNext, onGoBack, currDatas }: FormProps): JSX.Element {
+interface AddonsProps extends FormProps {
+  currDatas?: AddonsTypes
+}
+
+function AddOns({ onGoNext, onGoBack, currDatas }: AddonsProps): JSX.Element {
   const [choices, setChoices] = useState<string[]>([])
 
   const title = 'Pick add-ons'

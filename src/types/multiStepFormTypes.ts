@@ -24,10 +24,10 @@ interface SummaryTypes {
 type formTargetType = 'personalInfos' | 'addOns' | 'selectPlan' | 'summary'
 
 interface FormDatasType {
-  personalInfos?: formDatasTypes
-  addOns?: formDatasTypes
-  selectPlan?: formDatasTypes
-  summary?: formDatasTypes
+  personalInfos?: PersonalInfosTypes
+  addOns?: AddonsTypes
+  selectPlan?: SelectPlanTypes
+  summary?: SummaryTypes
 }
 
 type formDatasTypes =
@@ -39,7 +39,6 @@ type formDatasTypes =
 interface FormProps {
   onGoNext: (formDatas: formDatasTypes, formTarget: formTargetType) => void
   onGoBack: () => void
-  currDatas?: formDatasTypes | undefined
   allDatas?: FormDatasType
 }
 

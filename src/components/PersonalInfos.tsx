@@ -1,22 +1,31 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FormProps, PersonalInfosTypes } from '../types/multiStepFormTypes'
 import validation from '../utility/validation'
 import CustomForm from './CustomForm'
 
+interface PersonalInfosProps extends FormProps {
+  currDatas?: PersonalInfosTypes
+}
+
 function PersonalInfos({
   onGoNext,
   onGoBack,
-  currDatas, // TODO: quand on clique sur "go back", il faut que le formulaire soit rempli par les infos données par l'utilisateur juste avant.
-}: FormProps): JSX.Element {
+  currDatas,
+}: PersonalInfosProps): JSX.Element {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
-
   const [errors, setErrors] = useState<string[]>([])
 
   const title = 'Personal Info'
   const description =
     'Please provide your name, email address, and phone number.'
+
+  useEffect(() => {
+    if (currDatas?.name) setName(currDatas.name)
+    if (currDatas?.email) setEmail(currDatas.email)
+    if (currDatas?.phone) setPhone(currDatas.phone)
+  }, [])
 
   const submitForm = () => {
     const datas: PersonalInfosTypes = {
@@ -59,12 +68,14 @@ function PersonalInfos({
           id="name"
           placeholder="e.g. Stephen King"
           onChange={(e) => setName(e.target.value)}
+          value={name}
           className={errors.includes('name') ? 'input-error' : ''}
         />
         {errors.includes('name') && (
           <div className="text-error">Invalid name</div>
         )}
       </div>
+
       <div className="form-control">
         <label htmlFor="email">Email Address</label>
         <input
@@ -73,12 +84,14 @@ function PersonalInfos({
           id="email"
           placeholder="e.g. stephenking@lorem.com"
           onChange={(e) => setEmail(e.target.value)}
+          value={email}
           className={errors.includes('email') ? 'input-error' : ''}
         />
         {errors.includes('email') && (
           <div className="text-error">Invalid email</div>
         )}
       </div>
+
       <div className="form-control">
         <label htmlFor="phone">Phone Number</label>
         <input
@@ -87,6 +100,7 @@ function PersonalInfos({
           id="phone"
           placeholder="e.g. +1 234 567 890"
           onChange={(e) => setPhone(e.target.value)}
+          value={phone}
           className={errors.includes('phone') ? 'input-error' : ''}
         />
         {errors.includes('phone') && (

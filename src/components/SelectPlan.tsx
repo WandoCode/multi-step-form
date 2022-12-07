@@ -7,7 +7,15 @@ import {
 } from '../types/multiStepFormTypes'
 import CustomForm from './CustomForm'
 
-function SelectPlan({ onGoNext, onGoBack, currDatas }: FormProps): JSX.Element {
+interface SelectPlanProps extends FormProps {
+  currDatas?: SelectPlanTypes
+}
+
+function SelectPlan({
+  onGoNext,
+  onGoBack,
+  currDatas,
+}: SelectPlanProps): JSX.Element {
   const [plan, setPlan] = useState<planTypes>('Arcade')
   const [period, setPeriod] = useState<periodTypes>('Monthly')
 

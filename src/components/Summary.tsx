@@ -1,7 +1,15 @@
-import { FormProps, SummaryTypes } from '../types/multiStepFormTypes'
+import {
+  FormDatasType,
+  FormProps,
+  SummaryTypes,
+} from '../types/multiStepFormTypes'
 import CustomForm from './CustomForm'
 
-function Summary({ onGoNext, onGoBack, currDatas }: FormProps): JSX.Element {
+interface SummaryProps extends FormProps {
+  allDatas?: FormDatasType
+}
+
+function Summary({ onGoNext, onGoBack, allDatas }: SummaryProps): JSX.Element {
   const title = 'Finishing up'
   const description = 'Double-check everything looks OK before confirming.'
 

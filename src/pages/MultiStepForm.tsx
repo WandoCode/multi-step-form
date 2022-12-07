@@ -36,7 +36,7 @@ function MultiStepForm(): JSX.Element {
     formTarget: formTargetType
   ) => {
     const newDatas = { ...datas }
-    newDatas[formTarget] = formDatas
+    newDatas[formTarget] = formDatas as any
 
     setDatas(newDatas)
   }
@@ -46,7 +46,7 @@ function MultiStepForm(): JSX.Element {
       <StepList currStep={formStep} />
       {formStep === 1 && (
         <PersonalInfos
-          currDatas={datas.personalInfos}
+          currDatas={datas?.personalInfos}
           onGoNext={goToNextStep}
           onGoBack={goToPrecStep}
         />

@@ -1,8 +1,8 @@
 @use '../abstracts' as *;
 
 .custom-form {
-  display: grid;
-  align-content: start;
+  display: flex;
+  flex-direction: column;
   gap: rem(22);
 
   width: 100%;
@@ -35,6 +35,8 @@
   }
 
   &__nav-controler {
+    flex-grow: 1;
+
     position: fixed;
     bottom: 0;
     left: 0;
@@ -42,7 +44,7 @@
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-
+    align-items: end;
     padding: 1rem;
 
     background-color: var(--clr-neutral-100);
@@ -52,6 +54,7 @@
       position: static;
 
       padding: 0;
+      padding-bottom: 1rem;
 
       background-color: transparent;
       box-shadow: none;
