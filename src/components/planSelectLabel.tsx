@@ -1,3 +1,5 @@
+import { formatPrice } from '../utility/helpers'
+
 interface PlanSelectLabelProps {
   image: string
   title: string
@@ -7,9 +9,6 @@ interface PlanSelectLabelProps {
   id: string
 }
 
-interface shortPeriodType {
-  [key: string]: string
-}
 function PlanSelectLabel({
   image,
   title,
@@ -18,12 +17,7 @@ function PlanSelectLabel({
   tips,
   id,
 }: PlanSelectLabelProps): JSX.Element {
-  const shortPeriod: shortPeriodType = {
-    Monthly: 'mo',
-    Yearly: 'yr',
-  }
-
-  const priceStr = `$${price[period]}/${shortPeriod[period]}`
+  const priceStr = formatPrice(price, period)
   return (
     <label htmlFor={id} className="plan-label">
       <img src={image} alt="" />

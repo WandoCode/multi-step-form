@@ -63,6 +63,7 @@ function MultiStepForm(): JSX.Element {
           currDatas={datas.addOns}
           onGoNext={goToNextStep}
           onGoBack={goToPrecStep}
+          period={datas.selectPlan?.period}
         />
       )}
       {formStep === 4 && (
