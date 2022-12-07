@@ -97,3 +97,19 @@ body {
     color: var(--clr-neutral-500);
   }
 }
+
+.plan-label {
+  &__text {
+    line-height: 1;
+  }
+
+  &__h2 {
+    @include breakpoint(large) {
+      font-size: var(--fs-lg-400);
+    }
+  }
+  &__subtitle {
+    color: var(--clr-neutral-500);
+    font-size: var(--fs-sm-400);
+  }
+}

@@ -1,0 +1,12 @@
+@use '../abstracts' as *;
+
+.select-plan {
+  & .form-control:first-child {
+    display: grid;
+    gap: rem(12);
+
+    @include breakpoint(large) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}

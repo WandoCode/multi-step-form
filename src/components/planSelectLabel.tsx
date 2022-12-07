@@ -25,12 +25,13 @@ function PlanSelectLabel({
 
   const priceStr = `$${price[period]}/${shortPeriod[period]}`
   return (
-    <label htmlFor={id}>
+    <label htmlFor={id} className="plan-label">
       <img src={image} alt="" />
-
-      <h2 className="h2 h2--label">{title}</h2>
-      <p>{priceStr}</p>
-      {period === 'Yearly' && <p>{tips}</p>}
+      <div className="plan-label__text">
+        <h2 className="plan-label__h2">{title}</h2>
+        <p className="plan-label__subtitle">{priceStr}</p>
+        {period === 'Yearly' && <p>{tips}</p>}
+      </div>
     </label>
   )
 }

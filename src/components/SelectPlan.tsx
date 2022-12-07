@@ -49,6 +49,14 @@ function SelectPlan({
       addClass="select-plan"
     >
       <div className="form-control">
+        <input
+          type="radio"
+          id="arcade"
+          checked={plan === 'Arcade'}
+          onChange={() => setPlan('Arcade')}
+          className="hide-input"
+        />
+
         <PlanSelectLabel
           image={arcadeIcon}
           title="Arcade"
@@ -57,12 +65,13 @@ function SelectPlan({
           tips="2 months free"
           id="arcade"
         />
+
         <input
           type="radio"
-          name="plan"
-          id="arcade"
-          onChange={() => setPlan('Arcade')}
-          checked={plan === 'Arcade'}
+          id="advanced"
+          checked={plan === 'Advanced'}
+          onChange={() => setPlan('Advanced')}
+          className="hide-input"
         />
 
         <PlanSelectLabel
@@ -73,12 +82,13 @@ function SelectPlan({
           tips="2 months free"
           id="advanced"
         />
+
         <input
           type="radio"
-          name="plan"
-          id="advanced"
-          onChange={() => setPlan('Advanced')}
-          checked={plan === 'Advanced'}
+          id="pro"
+          checked={plan === 'Pro'}
+          onChange={() => setPlan('Pro')}
+          className="hide-input"
         />
 
         <PlanSelectLabel
@@ -88,13 +98,6 @@ function SelectPlan({
           period={period}
           tips="2 months free"
           id="pro"
-        />
-        <input
-          type="radio"
-          name="plan"
-          id="pro"
-          onChange={() => setPlan('Pro')}
-          checked={plan === 'Pro'}
         />
       </div>
 
