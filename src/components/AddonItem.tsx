@@ -20,21 +20,21 @@ function AddonItem({
   const priceStr = formatPrice(price, period)
 
   return (
-    <label htmlFor={id}>
-      <div className="addons__check-place">
+    <label htmlFor={id} className="addon-item">
+      <div className="addon-item__check">
         {checked && (
           <img
-            className="addons__check-mark"
+            className="addon-item__check-mark"
             src={checkMark}
             alt="check-mark icon"
           />
         )}
       </div>
-      <div className="addons__text">
-        <h2 className="addons_h2">{title}</h2>
-        <p className="addons__description">{description}</p>
+      <div className="addon-item__text">
+        <h2 className="addon-item__h2">{title}</h2>
+        <p className="addon-item__description">{description}</p>
       </div>
-      <div className="addons__price">+{priceStr}</div>
+      <div className="addon-item__price">+{priceStr}</div>
     </label>
   )
 }

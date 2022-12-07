@@ -1,0 +1,9 @@
+@use '../abstracts' as *;
+
+.addons {
+  gap: rem(12);
+
+  @include breakpoint(large) {
+    gap: rem(16);
+  }
+}

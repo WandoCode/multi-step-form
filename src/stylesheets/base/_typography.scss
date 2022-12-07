@@ -106,6 +106,7 @@ body {
     &.inactive {
       color: var(--clr-neutral-500);
     }
+
     @include breakpoint(large) {
       font-weight: var(--fw-bold);
     }
@@ -130,6 +131,35 @@ body {
   &__tips {
     @include breakpoint(large) {
       font-size: var(--fs-lg-200);
+    }
+  }
+}
+
+.addon-item {
+  &__h2 {
+    font-size: var(--fs-sm-400);
+    font-weight: var(--fw-normal);
+
+    @include breakpoint(large) {
+      font-size: var(--fs-lg-400);
+    }
+  }
+
+  &__description {
+    font-size: var(--fs-sm-300);
+    font-weight: var(--fw-light);
+    color: var(--clr-neutral-500);
+
+    @include breakpoint(large) {
+      font-size: var(--fs-lg-400);
+    }
+  }
+
+  &__price {
+    color: var(--clr-primary-400);
+
+    @include breakpoint(large) {
+      font-size: var(--fs-lg-400);
     }
   }
 }

@@ -31,6 +31,9 @@
     box-shadow: none;
   }
 
+  @include breakpoint-down(small) {
+    padding: rem(16) rem(10);
+  }
   &__heading {
     display: grid;
 

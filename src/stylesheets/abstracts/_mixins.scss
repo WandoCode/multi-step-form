@@ -9,6 +9,12 @@
     @content;
   }
 }
+@mixin breakpoint-down($key) {
+  $size: map-get($breakpoints, $key);
+  @media (max-width: $size) {
+    @content;
+  }
+}
 
 /// Event wrapper
 /// @author Harry Roberts
