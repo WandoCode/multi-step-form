@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import {
   FormProps,
   periodTypes,
@@ -25,6 +25,11 @@ function SelectPlan({
 
   const title = 'Select your plan'
   const description = 'You have the option of monthly or yearly billing.'
+
+  useEffect(() => {
+    if (currDatas?.plan) setPlan(currDatas.plan)
+    if (currDatas?.period) setPeriod(currDatas.period)
+  }, [])
 
   const submitForm = () => {
     // TODO: Valid form datas and show errors

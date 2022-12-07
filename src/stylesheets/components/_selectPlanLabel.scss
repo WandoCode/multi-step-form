@@ -9,6 +9,11 @@
   border: 1px var(--clr-neutral-400) solid;
   border-radius: rem(8);
 
+  cursor: pointer;
+
+  &:hover {
+    border: 1px var(--clr-primary-400) solid;
+  }
   @include breakpoint(large) {
     flex-direction: column;
     gap: rem(40);
