@@ -30,7 +30,7 @@ function PlanSelectLabel({
       <div className="plan-label__text">
         <h2 className="plan-label__h2">{title}</h2>
         <p className="plan-label__subtitle">{priceStr}</p>
-        {period === 'Yearly' && <p>{tips}</p>}
+        {period === 'Yearly' && <p className="plan-label__tips">{tips}</p>}
       </div>
     </label>
   )

@@ -7,6 +7,9 @@
 
   width: 100%;
   max-width: calc(100% - 2rem);
+  max-height: 68vh;
+
+  overflow-y: scroll;
 
   padding: rem(32) rem(24);
   margin-inline: auto;
@@ -17,6 +20,8 @@
 
   @include breakpoint(large) {
     gap: rem(35);
+
+    overflow-y: hidden;
 
     margin-inline: rem(100);
     padding: 0;

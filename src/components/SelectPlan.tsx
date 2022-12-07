@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import {
   FormProps,
   periodTypes,
@@ -39,6 +39,20 @@ function SelectPlan({
   const cancelForm = () => {
     onGoBack()
   }
+
+  const handleSwitch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const isChecked = e.target.checked
+
+    isChecked ? setPeriod('Yearly') : setPeriod('Monthly')
+  }
+
+  const monthlyLabelClass = useMemo(() => {
+    return period === 'Monthly' ? '' : 'inactive'
+  }, [period])
+
+  const yearlyLabelClass = useMemo(() => {
+    return period === 'Yearly' ? '' : 'inactive'
+  }, [period])
 
   return (
     <CustomForm
@@ -101,24 +115,26 @@ function SelectPlan({
         />
       </div>
 
-      <div className="form-control">
-        <label htmlFor="monthly">Monthly</label>
-        <input
-          type="radio"
-          name="period"
-          id="monthly"
-          onChange={() => setPeriod('Monthly')}
-          checked={period === 'Monthly'}
-        />
-
-        <label htmlFor="yearly">Yearly</label>
-        <input
-          type="radio"
-          name="period"
-          id="yearly"
-          onChange={() => setPeriod('Yearly')}
-          checked={period === 'Yearly'}
-        />
+      <div className="form-control form-control--switch">
+        <div className="select-plan__switch-controler">
+          <label htmlFor="period" className={monthlyLabelClass}>
+            Monthly
+          </label>
+          <input
+            type="checkbox"
+            name="period"
+            checked={period === 'Yearly'}
+            id="period"
+            onChange={handleSwitch}
+            className="hide-input"
+          />
+          <label htmlFor="period" className="select-plan__switch">
+            <span className="select-plan__slider"></span>
+          </label>
+          <label htmlFor="period" className={yearlyLabelClass}>
+            Yearly
+          </label>
+        </div>
       </div>
     </CustomForm>
   )

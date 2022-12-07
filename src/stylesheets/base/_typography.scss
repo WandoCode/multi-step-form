@@ -98,6 +98,20 @@ body {
   }
 }
 
+.select-plan {
+  &__switch-controler label {
+    font-size: var(--fs-sm-400);
+    font-weight: var(--fw-normal);
+
+    &.inactive {
+      color: var(--clr-neutral-500);
+    }
+    @include breakpoint(large) {
+      font-weight: var(--fw-bold);
+    }
+  }
+}
+
 .plan-label {
   &__text {
     line-height: 1;
@@ -111,5 +125,11 @@ body {
   &__subtitle {
     color: var(--clr-neutral-500);
     font-size: var(--fs-sm-400);
+  }
+
+  &__tips {
+    @include breakpoint(large) {
+      font-size: var(--fs-lg-200);
+    }
   }
 }
