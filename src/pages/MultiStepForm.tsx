@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import AddOns from '../components/AddOns'
 import PersonalInfos from '../components/PersonalInfos'
 import SelectPlan from '../components/SelectPlan'
@@ -10,7 +10,7 @@ import {
   formDatasTypes,
   formTargetType,
 } from '../types/multiStepFormTypes'
-
+// TODO: retirer la partie "undefined" des type de plan, period, etc. et répercuter sur les différents composant (j'ai du mettre des garde-fou pour les cas où ces valeurs seraient undefined, ce qui n'arrive jamais...)
 function MultiStepForm(): JSX.Element {
   const [formStep, setFormStep] = useState(1)
   const [datas, setDatas] = useState<FormDatasType>({})
@@ -22,7 +22,7 @@ function MultiStepForm(): JSX.Element {
       Pro: 15,
       'Online service': 1,
       'Larger storage': 2,
-      'Custom profil': 2,
+      'Customizable profile': 2,
     },
     Yearly: {
       Arcade: 90,
@@ -30,7 +30,7 @@ function MultiStepForm(): JSX.Element {
       Pro: 150,
       'Online service': 10,
       'Larger storage': 20,
-      'Custom profil': 20,
+      'Customizable profile': 20,
     },
   }
 

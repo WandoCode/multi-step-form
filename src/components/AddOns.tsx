@@ -99,18 +99,18 @@ function AddOns({
         <input
           type="checkbox"
           id="custom-profil"
-          value="Custom profil"
-          checked={choices.includes('Custom profil')}
+          value="Customizable profile"
+          checked={choices.includes('Customizable profile')}
           onChange={handleChoice}
           className="hide-input"
         />
         <AddonItem
           id="custom-profil"
-          checked={choices.includes('Custom profil')}
+          checked={choices.includes('Customizable profile')}
           title="Customizable profile"
           description="Custom theme on your profile"
           period={period}
-          price={prices[period]['Custom profil']}
+          price={prices[period]['Customizable profile']}
         />
       </div>
     </CustomForm>
