@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FormProps, AddonsTypes, pricesType } from '../types/multiStepFormTypes'
 import AddonItem from './AddonItem'
 import CustomForm from './CustomForm'
@@ -21,8 +21,12 @@ function AddOns({
 
   const title = 'Pick add-ons'
   const description = 'Add-ons help enhance your gaming experience.'
+
+  useEffect(() => {
+    if (currDatas) setChoices(currDatas.choices)
+  }, [])
   const submitForm = () => {
-    // TODO: Valid form datas and show errors
+    // TODO: Valid form
     const datas: AddonsTypes = {
       choices,
     }
