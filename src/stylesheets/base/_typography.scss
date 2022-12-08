@@ -163,3 +163,44 @@ body {
     }
   }
 }
+
+.summary {
+  font-size: var(--fs-sm-400);
+
+  &__plan {
+    font-weight: var(--fw-normal);
+    color: var(--clr-primary-700);
+    font-size: var(--fs-lg-400);
+    &-value {
+      font-weight: var(--fw-bold);
+      color: var(--clr-primary-700);
+
+      @include breakpoint(large) {
+        font-size: var(--fs-lg-400);
+      }
+    }
+  }
+
+  &__plan-link {
+    text-decoration: underline;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--clr-primary-400);
+      }
+    }
+  }
+
+  &__addon-value {
+    color: var(--clr-primary-700);
+  }
+
+  &__total-value {
+    font-weight: var(--fw-bold);
+    color: var(--clr-primary-400);
+
+    @include breakpoint(large) {
+      font-size: var(--fs-lg-600);
+    }
+  }
+}

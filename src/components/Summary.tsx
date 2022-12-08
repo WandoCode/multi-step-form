@@ -54,9 +54,9 @@ function Summary({
   const addonsDOM = addons.map((el) => {
     const addonPrice = formatPrice(prices[period][el])
     return (
-      <div className="summary__addonn-item" key={el}>
-        <p className="summary__addons-text">{el}</p>
-        <p className="summary__addons-value">+{addonPrice}</p>
+      <div className="summary__addon-item" key={el}>
+        <p className="summary__addon-text">{el}</p>
+        <p className="summary__addon-value">+{addonPrice}</p>
       </div>
     )
   })
@@ -91,3 +91,5 @@ function Summary({
 }
 
 export default Summary
+
+//TODO: saves form on when click on Goback button too

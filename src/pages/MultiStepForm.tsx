@@ -40,7 +40,7 @@ function MultiStepForm(): JSX.Element {
   ) => {
     saveFormDatas(formDatas, formTarget)
 
-    const newStep = formStep < 4 ? formStep + 1 : 4
+    const newStep = formStep < 5 ? formStep + 1 : 5
 
     setFormStep(newStep)
   }
