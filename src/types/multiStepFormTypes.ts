@@ -42,7 +42,7 @@ type formDatasTypes =
 
 interface FormProps {
   onGoNext: (formDatas: formDatasTypes, formTarget: formTargetType) => void
-  onGoBack: () => void
+  onGoBack: (forceStep?: number) => void
   allDatas?: FormDatasType
 }
 

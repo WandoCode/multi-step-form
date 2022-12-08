@@ -45,7 +45,9 @@ function MultiStepForm(): JSX.Element {
     setFormStep(newStep)
   }
 
-  const goToPrecStep = () => {
+  const goToPrecStep = (forceStep?: number) => {
+    if (forceStep) return setFormStep(forceStep)
+
     const newStep = formStep > 1 ? formStep - 1 : 1
     setFormStep(newStep)
   }
