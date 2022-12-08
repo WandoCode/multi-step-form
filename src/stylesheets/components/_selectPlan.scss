@@ -40,10 +40,13 @@
 
     height: rem(20);
     width: rem(38);
+
+    overflow: hidden;
+
+    cursor: pointer;
     background-color: var(--clr-primary-700);
     border: rem(4) var(--clr-primary-700) solid;
     border-radius: rem(10);
-    overflow: hidden;
   }
 
   &__slider {
