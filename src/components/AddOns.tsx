@@ -15,6 +15,7 @@ function AddOns({
   currDatas,
   period,
   prices,
+  saveData,
 }: AddonsProps): JSX.Element {
   period = period ? period : 'Monthly'
   const [choices, setChoices] = useState<string[]>([])
@@ -31,10 +32,16 @@ function AddOns({
       choices,
     }
 
-    onGoNext(datas, 'addOns')
+    saveData(datas, 'addOns')
+    onGoNext()
   }
 
   const cancelForm = () => {
+    const datas: AddonsTypes = {
+      choices,
+    }
+
+    saveData(datas, 'addOns')
     onGoBack()
   }
 

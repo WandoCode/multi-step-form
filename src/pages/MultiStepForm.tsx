@@ -34,12 +34,7 @@ function MultiStepForm(): JSX.Element {
     },
   }
 
-  const goToNextStep = (
-    formDatas: formDatasTypes,
-    formTarget: formTargetType
-  ) => {
-    saveFormDatas(formDatas, formTarget)
-
+  const goToNextStep = () => {
     const newStep = formStep < 5 ? formStep + 1 : 5
 
     setFormStep(newStep)
@@ -70,6 +65,7 @@ function MultiStepForm(): JSX.Element {
           currDatas={datas?.personalInfos}
           onGoNext={goToNextStep}
           onGoBack={goToPrecStep}
+          saveData={saveFormDatas}
         />
       )}
       {formStep === 2 && (
@@ -78,6 +74,7 @@ function MultiStepForm(): JSX.Element {
           onGoNext={goToNextStep}
           onGoBack={goToPrecStep}
           prices={prices}
+          saveData={saveFormDatas}
         />
       )}
       {formStep === 3 && (
@@ -87,6 +84,7 @@ function MultiStepForm(): JSX.Element {
           onGoBack={goToPrecStep}
           prices={prices}
           period={datas.selectPlan?.period}
+          saveData={saveFormDatas}
         />
       )}
       {formStep === 4 && (
@@ -95,6 +93,7 @@ function MultiStepForm(): JSX.Element {
           onGoNext={goToNextStep}
           onGoBack={goToPrecStep}
           prices={prices}
+          saveData={saveFormDatas}
         />
       )}
       {formStep === 5 && <ThanksScreen />}

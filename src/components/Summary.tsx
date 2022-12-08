@@ -23,6 +23,7 @@ function Summary({
   onGoBack,
   allDatas,
   prices,
+  saveData,
 }: SummaryProps): JSX.Element {
   const title = 'Finishing up'
   const description = 'Double-check everything looks OK before confirming.'
@@ -40,7 +41,8 @@ function Summary({
       confirm: true,
     }
 
-    onGoNext(datas, 'selectPlan')
+    saveData(datas, 'selectPlan')
+    onGoNext()
   }
 
   const cancelForm = () => {

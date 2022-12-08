@@ -22,6 +22,7 @@ function SelectPlan({
   onGoBack,
   currDatas,
   prices,
+  saveData,
 }: SelectPlanProps): JSX.Element {
   const [plan, setPlan] = useState<planTypes>('Arcade')
   const [period, setPeriod] = useState<periodTypes>('Monthly')
@@ -41,10 +42,17 @@ function SelectPlan({
       period,
     }
 
-    onGoNext(datas, 'selectPlan')
+    saveData(datas, 'selectPlan')
+    onGoNext()
   }
 
   const cancelForm = () => {
+    const datas: SelectPlanTypes = {
+      plan,
+      period,
+    }
+
+    saveData(datas, 'selectPlan')
     onGoBack()
   }
 

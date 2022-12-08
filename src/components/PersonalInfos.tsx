@@ -11,6 +11,7 @@ function PersonalInfos({
   onGoNext,
   onGoBack,
   currDatas,
+  saveData,
 }: PersonalInfosProps): JSX.Element {
   const [name, setName] = useState('aze')
   const [email, setEmail] = useState('aze@aze.be')
@@ -44,7 +45,8 @@ function PersonalInfos({
       setErrors([])
     }
 
-    onGoNext(datas, 'personalInfos')
+    saveData(datas, 'personalInfos')
+    onGoNext()
   }
 
   const cancelForm = () => {

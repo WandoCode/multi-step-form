@@ -41,9 +41,10 @@ type formDatasTypes =
   | SummaryTypes
 
 interface FormProps {
-  onGoNext: (formDatas: formDatasTypes, formTarget: formTargetType) => void
+  onGoNext: () => void
   onGoBack: (forceStep?: number) => void
   allDatas?: FormDatasType
+  saveData: (formDatas: formDatasTypes, formTarget: formTargetType) => void
 }
 
 export {
