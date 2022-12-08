@@ -1,3 +1,5 @@
+import { periodTypes, pricesType } from '../types/multiStepFormTypes'
+
 interface shortPeriodType {
   [key: string]: string
 }
@@ -10,4 +12,17 @@ const formatPrice = (price: number, period = 'Monthly') => {
   return `$${price}/${shortPeriod[period]}`
 }
 
-export { formatPrice }
+const getTotalPrice = (
+  prices: pricesType,
+  addons: string[] = [],
+  plan: string,
+  period: periodTypes
+) => {
+  let planPrice = prices[period][plan]
+
+  return addons.reduce((a, addon) => {
+    return a + prices[period][addon]
+  }, planPrice)
+}
+
+export { formatPrice, getTotalPrice }
