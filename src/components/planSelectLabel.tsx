@@ -25,6 +25,7 @@ function PlanSelectLabel({
     if (period !== 'Yearly') className += 'plan-label__tips--hide'
     return className
   }, [period])
+
   return (
     <label htmlFor={id} className="plan-label">
       <img src={image} alt="" />

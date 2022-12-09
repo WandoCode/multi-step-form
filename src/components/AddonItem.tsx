@@ -9,6 +9,7 @@ interface AddonItemTypes {
   price: number
   checked: boolean
 }
+
 function AddonItem({
   id,
   title,

@@ -42,12 +42,11 @@ function CustomForm({
     <div className="custom-form main-container">
       <div className="custom-form__heading">
         <h1 className="h1">{title}</h1>
-
         <p>{description}</p>
       </div>
+
       <form className={mainClass} onSubmit={handleGoNext} noValidate>
         {children}
-
         <div className="custom-form__nav-controler">
           {showCancelButton && (
             <button

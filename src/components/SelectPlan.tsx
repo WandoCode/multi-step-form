@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import {
   FormProps,
   periodTypes,
@@ -24,8 +24,8 @@ function SelectPlan({
   prices,
   saveData,
 }: SelectPlanProps): JSX.Element {
-  const [plan, setPlan] = useState<planTypes>(currDatas.plan)
-  const [period, setPeriod] = useState<periodTypes>(currDatas.period)
+  const [plan, setPlan] = useState(currDatas.plan)
+  const [period, setPeriod] = useState(currDatas.period)
 
   const title = 'Select your plan'
   const description = 'You have the option of monthly or yearly billing.'

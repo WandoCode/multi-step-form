@@ -31,14 +31,13 @@ function Summary({
   const period = allDatas.selectPlan.period
   const addons = allDatas.addOns.choices
   const planPrice = formatPrice(prices[period][plan], period)
-
   const totalPrice = formatPrice(
     getTotalPrice(prices, addons, plan, period),
     period
   )
 
   const submitForm = () => {
-    // A validation should be done in backend to check if value has been modified
+    // A validation should be done backend to check if value has been modified
     const datas: SummaryTypes = {
       confirm: true,
     }

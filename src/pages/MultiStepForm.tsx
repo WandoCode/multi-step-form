@@ -9,6 +9,7 @@ import {
   FormDatasType,
   formDatasTypes,
   formTargetType,
+  onGoBackType,
 } from '../types/multiStepFormTypes'
 
 const initalFormDatas: FormDatasType = {
@@ -58,7 +59,7 @@ function MultiStepForm(): JSX.Element {
     setFormStep(newStep)
   }
 
-  const goToPrecStep = (forceStep?: number) => {
+  const goToPrecStep = (forceStep?: onGoBackType) => {
     if (forceStep) return setFormStep(forceStep)
 
     const newStep = formStep > 1 ? formStep - 1 : 1

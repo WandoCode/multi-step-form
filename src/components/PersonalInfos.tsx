@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { FormProps, PersonalInfosTypes } from '../types/multiStepFormTypes'
 import validation from '../utility/validation'
 import CustomForm from './CustomForm'
@@ -13,20 +13,14 @@ function PersonalInfos({
   currDatas,
   saveData,
 }: PersonalInfosProps): JSX.Element {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState('')
+  const [name, setName] = useState(currDatas.name)
+  const [email, setEmail] = useState(currDatas.email)
+  const [phone, setPhone] = useState(currDatas.phone)
   const [errors, setErrors] = useState<string[]>([])
 
   const title = 'Personal Info'
   const description =
     'Please provide your name, email address, and phone number.'
-
-  useEffect(() => {
-    setName(currDatas.name)
-    setEmail(currDatas.email)
-    setPhone(currDatas.phone)
-  }, [])
 
   const submitForm = () => {
     const datas: PersonalInfosTypes = {

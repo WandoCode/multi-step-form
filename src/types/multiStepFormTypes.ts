@@ -40,9 +40,11 @@ type formDatasTypes =
   | SelectPlanTypes
   | SummaryTypes
 
+type onGoBackType = 1 | 2 | 3 | 4 | 5
+
 interface FormProps {
   onGoNext: () => void
-  onGoBack: (forceStep?: number) => void
+  onGoBack: (forceStep?: onGoBackType) => void
   saveData: (formDatas: formDatasTypes, formTarget: formTargetType) => void
 }
 
@@ -58,4 +60,5 @@ export {
   planTypes,
   periodTypes,
   pricesType,
+  onGoBackType,
 }

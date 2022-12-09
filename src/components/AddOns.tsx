@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { FormProps, AddonsTypes, pricesType } from '../types/multiStepFormTypes'
 import AddonItem from './AddonItem'
 import CustomForm from './CustomForm'
@@ -17,13 +17,13 @@ function AddOns({
   prices,
   saveData,
 }: AddonsProps): JSX.Element {
-  const [choices, setChoices] = useState<string[]>(currDatas.choices)
+  const [choices, setChoices] = useState(currDatas.choices)
 
   const title = 'Pick add-ons'
   const description = 'Add-ons help enhance your gaming experience.'
 
   const submitForm = () => {
-    // A validation should be done in backend to check if value has been modified
+    // A validation should be done backend to check if value has been modified
     const datas: AddonsTypes = {
       choices,
     }
@@ -43,11 +43,10 @@ function AddOns({
 
   const handleChoice = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
-    const valueIsInChoices = choices.includes(value)
 
     let newChoices: string[]
 
-    if (!valueIsInChoices) {
+    if (!choices.includes(value)) {
       newChoices = [...choices]
       newChoices.push(value)
     } else {
@@ -75,6 +74,7 @@ function AddOns({
           onChange={handleChoice}
           className="hide-input"
         />
+
         <AddonItem
           id="online-service"
           checked={choices.includes('Online service')}
@@ -84,6 +84,7 @@ function AddOns({
           price={prices[period]['Online service']}
         />
       </div>
+
       <div className="form-control">
         <input
           type="checkbox"
@@ -93,6 +94,7 @@ function AddOns({
           onChange={handleChoice}
           className="hide-input"
         />
+
         <AddonItem
           id="larger-storage"
           checked={choices.includes('Larger storage')}
@@ -102,6 +104,7 @@ function AddOns({
           price={prices[period]['Larger storage']}
         />
       </div>
+
       <div className="form-control">
         <input
           type="checkbox"
@@ -111,6 +114,7 @@ function AddOns({
           onChange={handleChoice}
           className="hide-input"
         />
+
         <AddonItem
           id="custom-profil"
           checked={choices.includes('Customizable profile')}
