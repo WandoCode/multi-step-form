@@ -18,6 +18,7 @@ function PlanSelectLabel({
   id,
 }: PlanSelectLabelProps): JSX.Element {
   const priceStr = formatPrice(price, period)
+
   return (
     <label htmlFor={id} className="plan-label">
       <img src={image} alt="" />

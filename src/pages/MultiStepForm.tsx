@@ -10,29 +10,47 @@ import {
   formDatasTypes,
   formTargetType,
 } from '../types/multiStepFormTypes'
-// TODO: retirer la partie "undefined" des type de plan, period, etc. et répercuter sur les différents composant (j'ai du mettre des garde-fou pour les cas où ces valeurs seraient undefined, ce qui n'arrive jamais...)
+
+const initalFormDatas: FormDatasType = {
+  personalInfos: {
+    name: 'aze',
+    email: 'aze@aze.be',
+    phone: '+12456789',
+  },
+  addOns: {
+    choices: [],
+  },
+  selectPlan: {
+    plan: 'Arcade',
+    period: 'Monthly',
+  },
+  summary: {
+    confirm: false,
+  },
+}
+
+const prices = {
+  Monthly: {
+    Arcade: 9,
+    Advanced: 12,
+    Pro: 15,
+    'Online service': 1,
+    'Larger storage': 2,
+    'Customizable profile': 2,
+  },
+  Yearly: {
+    Arcade: 90,
+    Advanced: 120,
+    Pro: 150,
+    'Online service': 10,
+    'Larger storage': 20,
+    'Customizable profile': 20,
+  },
+}
+
 function MultiStepForm(): JSX.Element {
   const [formStep, setFormStep] = useState(1)
-  const [datas, setDatas] = useState<FormDatasType>({})
-
-  const prices = {
-    Monthly: {
-      Arcade: 9,
-      Advanced: 12,
-      Pro: 15,
-      'Online service': 1,
-      'Larger storage': 2,
-      'Customizable profile': 2,
-    },
-    Yearly: {
-      Arcade: 90,
-      Advanced: 120,
-      Pro: 150,
-      'Online service': 10,
-      'Larger storage': 20,
-      'Customizable profile': 20,
-    },
-  }
+  const [datas, setDatas] = useState<FormDatasType>(initalFormDatas)
 
   const goToNextStep = () => {
     const newStep = formStep < 5 ? formStep + 1 : 5
@@ -60,14 +78,16 @@ function MultiStepForm(): JSX.Element {
   return (
     <div className="multi-step-form">
       <StepList currStep={formStep < 5 ? formStep : 4} />
+
       {formStep === 1 && (
         <PersonalInfos
-          currDatas={datas?.personalInfos}
+          currDatas={datas.personalInfos}
           onGoNext={goToNextStep}
           onGoBack={goToPrecStep}
           saveData={saveFormDatas}
         />
       )}
+
       {formStep === 2 && (
         <SelectPlan
           currDatas={datas.selectPlan}
@@ -77,16 +97,18 @@ function MultiStepForm(): JSX.Element {
           saveData={saveFormDatas}
         />
       )}
+
       {formStep === 3 && (
         <AddOns
           currDatas={datas.addOns}
           onGoNext={goToNextStep}
           onGoBack={goToPrecStep}
           prices={prices}
-          period={datas.selectPlan?.period}
+          period={datas.selectPlan.period}
           saveData={saveFormDatas}
         />
       )}
+
       {formStep === 4 && (
         <Summary
           allDatas={datas}
@@ -96,6 +118,7 @@ function MultiStepForm(): JSX.Element {
           saveData={saveFormDatas}
         />
       )}
+
       {formStep === 5 && <ThanksScreen />}
     </div>
   )

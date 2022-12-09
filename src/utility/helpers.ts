@@ -8,13 +8,13 @@ const shortPeriod: shortPeriodType = {
   Yearly: 'yr',
 }
 
-const formatPrice = (price: number, period = 'Monthly') => {
+const formatPrice = (price: number, period: string) => {
   return `$${price}/${shortPeriod[period]}`
 }
 
 const getTotalPrice = (
   prices: pricesType,
-  addons: string[] = [],
+  addons: string[],
   plan: string,
   period: periodTypes
 ) => {

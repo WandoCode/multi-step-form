@@ -4,7 +4,7 @@ import validation from '../utility/validation'
 import CustomForm from './CustomForm'
 
 interface PersonalInfosProps extends FormProps {
-  currDatas?: PersonalInfosTypes
+  currDatas: PersonalInfosTypes
 }
 
 function PersonalInfos({
@@ -13,9 +13,9 @@ function PersonalInfos({
   currDatas,
   saveData,
 }: PersonalInfosProps): JSX.Element {
-  const [name, setName] = useState('aze')
-  const [email, setEmail] = useState('aze@aze.be')
-  const [phone, setPhone] = useState('+12456789')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
   const [errors, setErrors] = useState<string[]>([])
 
   const title = 'Personal Info'
@@ -23,9 +23,9 @@ function PersonalInfos({
     'Please provide your name, email address, and phone number.'
 
   useEffect(() => {
-    if (currDatas?.name) setName(currDatas.name)
-    if (currDatas?.email) setEmail(currDatas.email)
-    if (currDatas?.phone) setPhone(currDatas.phone)
+    setName(currDatas.name)
+    setEmail(currDatas.email)
+    setPhone(currDatas.phone)
   }, [])
 
   const submitForm = () => {

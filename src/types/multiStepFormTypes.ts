@@ -5,7 +5,7 @@ interface PersonalInfosTypes {
 }
 
 interface AddonsTypes {
-  choices: Array<string>
+  choices: string[]
 }
 
 type planTypes = 'Arcade' | 'Advanced' | 'Pro'
@@ -28,10 +28,10 @@ interface pricesType {
 }
 
 interface FormDatasType {
-  personalInfos?: PersonalInfosTypes
-  addOns?: AddonsTypes
-  selectPlan?: SelectPlanTypes
-  summary?: SummaryTypes
+  personalInfos: PersonalInfosTypes
+  addOns: AddonsTypes
+  selectPlan: SelectPlanTypes
+  summary: SummaryTypes
 }
 
 type formDatasTypes =
@@ -43,7 +43,6 @@ type formDatasTypes =
 interface FormProps {
   onGoNext: () => void
   onGoBack: (forceStep?: number) => void
-  allDatas?: FormDatasType
   saveData: (formDatas: formDatasTypes, formTarget: formTargetType) => void
 }
 

@@ -11,10 +11,9 @@ import arcadeIcon from '../assets/images/icon-arcade.svg'
 import advancedIcon from '../assets/images/icon-advanced.svg'
 import proIcon from '../assets/images/icon-pro.svg'
 import PlanSelectLabel from './planSelectLabel'
-import validation from '../utility/validation'
 
 interface SelectPlanProps extends FormProps {
-  currDatas?: SelectPlanTypes
+  currDatas: SelectPlanTypes
   prices: pricesType
 }
 
@@ -32,8 +31,8 @@ function SelectPlan({
   const description = 'You have the option of monthly or yearly billing.'
 
   useEffect(() => {
-    if (currDatas?.plan) setPlan(currDatas.plan)
-    if (currDatas?.period) setPeriod(currDatas.period)
+    setPlan(currDatas.plan)
+    setPeriod(currDatas.period)
   }, [])
 
   const submitForm = () => {

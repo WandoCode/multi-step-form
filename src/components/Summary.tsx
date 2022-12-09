@@ -1,7 +1,6 @@
 import {
   FormDatasType,
   FormProps,
-  periodTypes,
   pricesType,
   SummaryTypes,
 } from '../types/multiStepFormTypes'
@@ -9,7 +8,7 @@ import { formatPrice, getTotalPrice } from '../utility/helpers'
 import CustomForm from './CustomForm'
 
 interface SummaryProps extends FormProps {
-  allDatas?: FormDatasType
+  allDatas: FormDatasType
   prices: pricesType
 }
 
@@ -28,12 +27,15 @@ function Summary({
   const title = 'Finishing up'
   const description = 'Double-check everything looks OK before confirming.'
 
-  const plan = allDatas?.selectPlan?.plan || 'Arcade' // TODO: ex de gardefous a retirer
-  const period = allDatas?.selectPlan?.period || 'Monthly' //TODO: idem
-  const addons = allDatas?.addOns?.choices || [] // TODO: idem
-  const planPrice = formatPrice(prices[period][plan])
+  const plan = allDatas.selectPlan.plan
+  const period = allDatas.selectPlan.period
+  const addons = allDatas.addOns.choices
+  const planPrice = formatPrice(prices[period][plan], period)
 
-  const totalPrice = formatPrice(getTotalPrice(prices, addons, plan, period))
+  const totalPrice = formatPrice(
+    getTotalPrice(prices, addons, plan, period),
+    period
+  )
 
   const submitForm = () => {
     // A validation should be done in backend to check if value has been modified
@@ -54,7 +56,7 @@ function Summary({
   }
 
   const addonsDOM = addons.map((el) => {
-    const addonPrice = formatPrice(prices[period][el])
+    const addonPrice = formatPrice(prices[period][el], period)
     return (
       <div className="summary__addon-item" key={el}>
         <p className="summary__addon-text">{el}</p>

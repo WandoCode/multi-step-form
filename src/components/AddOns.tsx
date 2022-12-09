@@ -4,8 +4,8 @@ import AddonItem from './AddonItem'
 import CustomForm from './CustomForm'
 
 interface AddonsProps extends FormProps {
-  currDatas?: AddonsTypes
-  period?: string
+  currDatas: AddonsTypes
+  period: string
   prices: pricesType
 }
 
@@ -17,14 +17,13 @@ function AddOns({
   prices,
   saveData,
 }: AddonsProps): JSX.Element {
-  period = period ? period : 'Monthly'
   const [choices, setChoices] = useState<string[]>([])
 
   const title = 'Pick add-ons'
   const description = 'Add-ons help enhance your gaming experience.'
 
   useEffect(() => {
-    if (currDatas) setChoices(currDatas.choices)
+    setChoices(currDatas.choices)
   }, [])
 
   const submitForm = () => {

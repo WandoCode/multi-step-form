@@ -5,7 +5,7 @@ interface AddonItemTypes {
   id: string
   title: string
   description: string
-  period?: string
+  period: string
   price: number
   checked: boolean
 }
