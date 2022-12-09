@@ -39,7 +39,7 @@ function CustomForm({
   }, [addClass])
 
   return (
-    <div className="custom-form">
+    <div className="custom-form main-container">
       <div className="custom-form__heading">
         <h1 className="h1">{title}</h1>
 

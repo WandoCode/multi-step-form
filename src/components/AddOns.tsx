@@ -26,8 +26,9 @@ function AddOns({
   useEffect(() => {
     if (currDatas) setChoices(currDatas.choices)
   }, [])
+
   const submitForm = () => {
-    // TODO: Valid form
+    // A validation should be done in backend to check if value has been modified
     const datas: AddonsTypes = {
       choices,
     }

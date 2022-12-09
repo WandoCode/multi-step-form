@@ -59,7 +59,7 @@ function MultiStepForm(): JSX.Element {
 
   return (
     <div className="multi-step-form">
-      <StepList currStep={formStep} />
+      <StepList currStep={formStep < 5 ? formStep : 4} />
       {formStep === 1 && (
         <PersonalInfos
           currDatas={datas?.personalInfos}

@@ -36,7 +36,7 @@ function Summary({
   const totalPrice = formatPrice(getTotalPrice(prices, addons, plan, period))
 
   const submitForm = () => {
-    // TODO: Valid form datas
+    // A validation should be done in backend to check if value has been modified
     const datas: SummaryTypes = {
       confirm: true,
     }

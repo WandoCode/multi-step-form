@@ -11,6 +11,7 @@ import arcadeIcon from '../assets/images/icon-arcade.svg'
 import advancedIcon from '../assets/images/icon-advanced.svg'
 import proIcon from '../assets/images/icon-pro.svg'
 import PlanSelectLabel from './planSelectLabel'
+import validation from '../utility/validation'
 
 interface SelectPlanProps extends FormProps {
   currDatas?: SelectPlanTypes
@@ -36,7 +37,7 @@ function SelectPlan({
   }, [])
 
   const submitForm = () => {
-    // TODO: Valid form datas and show errors
+    // A validation should be done in backend to check if value has been modified
     const datas: SelectPlanTypes = {
       plan,
       period,
