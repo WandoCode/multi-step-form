@@ -5,22 +5,22 @@
 @use '../abstracts/' as *;
 
 .btn {
-  cursor: pointer;
   padding: rem(12) rem(16);
 
+  cursor: pointer;
   background-color: var(--clr-primary-700);
 
   border: none;
   border-radius: rem(4);
 
-  &:hover {
-    background-color: var(--clr-primary-600);
-  }
-
   @include breakpoint(large) {
     padding: rem(15) rem(24);
 
     border-radius: rem(8);
+  }
+
+  &:hover {
+    background-color: var(--clr-primary-600);
   }
 
   &--confirm {

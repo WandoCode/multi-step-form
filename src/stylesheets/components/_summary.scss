@@ -39,6 +39,7 @@
       gap: rem(7);
     }
   }
+
   &__plan-link {
     cursor: pointer;
   }
@@ -48,6 +49,7 @@
     gap: $flow;
     padding-top: $flow;
   }
+
   &__addon-item {
     display: flex;
     justify-content: space-between;

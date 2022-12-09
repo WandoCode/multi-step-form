@@ -11,12 +11,13 @@
 
   cursor: pointer;
 
-  &:hover {
-    border: 1px var(--clr-primary-400) solid;
-  }
   @include breakpoint(large) {
     flex-direction: column;
     gap: rem(40);
+  }
+
+  &:hover {
+    border: 1px var(--clr-primary-400) solid;
   }
 
   input:checked + & {

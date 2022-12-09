@@ -8,7 +8,7 @@
     gap: rem(12);
 
     @include breakpoint(large) {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
@@ -50,9 +50,8 @@
   }
 
   &__slider {
-    height: 100%;
     width: rem(12);
-    height: rem(12);
+
     border-radius: 10rem;
     background-color: var(--clr-neutral-100);
   }

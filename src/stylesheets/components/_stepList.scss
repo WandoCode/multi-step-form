@@ -45,6 +45,7 @@
     background-size: cover;
 
     z-index: -1;
+
     @include breakpoint(large) {
       content: none;
     }

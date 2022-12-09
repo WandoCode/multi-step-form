@@ -26,13 +26,16 @@
 
   @include breakpoint-down(small) {
     gap: rem(5);
+
     padding: rem(8) rem(10);
   }
 
   &__check {
     flex-shrink: 0;
+
     height: rem(20);
     width: rem(20);
+
     border: 1px var(--clr-neutral-400) solid;
     border-radius: rem(4);
   }
@@ -45,6 +48,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
       background-color: var(--clr-primary-400);
       border-color: var(--clr-primary-400);
     }

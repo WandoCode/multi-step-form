@@ -23,6 +23,7 @@ $gap: 9;
 
   &__img {
     margin-bottom: rem(24 - $gap);
+
     @include breakpoint(large) {
       margin-bottom: rem(32 - $gap);
     }
