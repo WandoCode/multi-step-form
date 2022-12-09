@@ -45,7 +45,7 @@ function CustomForm({
 
         <p>{description}</p>
       </div>
-      <form className={mainClass} onSubmit={handleGoNext}>
+      <form className={mainClass} onSubmit={handleGoNext} noValidate>
         {children}
 
         <div className="custom-form__nav-controler">
