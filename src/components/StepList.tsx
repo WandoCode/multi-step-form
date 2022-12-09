@@ -24,7 +24,7 @@ function StepList({ currStep }: propsTypes): JSX.Element {
 
   return (
     <ol className="step-list">
-      <div className="step-list__container">{steps}</div>
+      <li className="step-list__container">{steps}</li>
     </ol>
   )
 }

@@ -13,13 +13,13 @@ function StepItem({ step, isCurrStep, description }: propsTypes): JSX.Element {
   }, [isCurrStep])
 
   return (
-    <li className="step-item">
+    <div className="step-item">
       <div className={itemNumberClass}>{step}</div>
       <div className="step-item__text-container hide-on-mobile">
         <p className="step-item__step">STEP {step}</p>
         <p className="step-item__description">{description}</p>
       </div>
-    </li>
+    </div>
   )
 }
 
