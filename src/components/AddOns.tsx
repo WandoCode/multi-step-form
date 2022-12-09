@@ -17,14 +17,10 @@ function AddOns({
   prices,
   saveData,
 }: AddonsProps): JSX.Element {
-  const [choices, setChoices] = useState<string[]>([])
+  const [choices, setChoices] = useState<string[]>(currDatas.choices)
 
   const title = 'Pick add-ons'
   const description = 'Add-ons help enhance your gaming experience.'
-
-  useEffect(() => {
-    setChoices(currDatas.choices)
-  }, [])
 
   const submitForm = () => {
     // A validation should be done in backend to check if value has been modified

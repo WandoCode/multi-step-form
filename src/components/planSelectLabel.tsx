@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { formatPrice } from '../utility/helpers'
 
 interface PlanSelectLabelProps {
@@ -19,13 +20,18 @@ function PlanSelectLabel({
 }: PlanSelectLabelProps): JSX.Element {
   const priceStr = formatPrice(price, period)
 
+  const tipsClass = useMemo(() => {
+    let className = 'plan-label__tips '
+    if (period !== 'Yearly') className += 'plan-label__tips--hide'
+    return className
+  }, [period])
   return (
     <label htmlFor={id} className="plan-label">
       <img src={image} alt="" />
       <div className="plan-label__text">
         <h2 className="plan-label__h2">{title}</h2>
         <p className="plan-label__subtitle">{priceStr}</p>
-        {period === 'Yearly' && <p className="plan-label__tips">{tips}</p>}
+        <p className={tipsClass}>{tips}</p>
       </div>
     </label>
   )

@@ -76,7 +76,7 @@ body {
   & .text-error {
     font-size: var(--fs-sm-400);
     color: var(--clr-primary-800);
-    font-weight: var(--fw-bold);
+    font-weight: var(--fw-normal);
 
     @include breakpoint(large) {
       font-size: var(--fs-lg-400);
@@ -102,6 +102,8 @@ body {
   &__switch-controler label {
     font-size: var(--fs-sm-400);
     font-weight: var(--fw-normal);
+
+    transition: color 0.2s;
 
     &.inactive {
       color: var(--clr-neutral-500);

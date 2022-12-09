@@ -36,4 +36,16 @@
       margin-left: 0;
     }
   }
+
+  &__tips {
+    transition: height 0.2s, opacity 0.2s;
+    height: 0.75rem;
+    opacity: 1;
+
+    &--hide {
+      visibility: hidden;
+      opacity: 0;
+      height: 0;
+    }
+  }
 }

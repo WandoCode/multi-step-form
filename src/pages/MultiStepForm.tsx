@@ -13,9 +13,9 @@ import {
 
 const initalFormDatas: FormDatasType = {
   personalInfos: {
-    name: 'aze',
-    email: 'aze@aze.be',
-    phone: '+12456789',
+    name: '',
+    email: '',
+    phone: '',
   },
   addOns: {
     choices: [],

@@ -36,7 +36,6 @@
 
   &__switch {
     display: flex;
-    justify-content: flex-start;
 
     height: rem(20);
     width: rem(38);
@@ -47,6 +46,21 @@
     background-color: var(--clr-primary-700);
     border: rem(4) var(--clr-primary-700) solid;
     border-radius: rem(10);
+
+    &::before {
+      content: '';
+
+      display: block;
+      flex-grow: 0;
+
+      transition: flex 0.2s;
+    }
+
+    input:checked + & {
+      &::before {
+        flex-grow: 1;
+      }
+    }
   }
 
   &__slider {
@@ -54,9 +68,5 @@
 
     border-radius: 10rem;
     background-color: var(--clr-neutral-100);
-  }
-
-  input:checked + &__switch {
-    justify-content: flex-end;
   }
 }

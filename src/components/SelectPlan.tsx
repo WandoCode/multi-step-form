@@ -24,16 +24,11 @@ function SelectPlan({
   prices,
   saveData,
 }: SelectPlanProps): JSX.Element {
-  const [plan, setPlan] = useState<planTypes>('Arcade')
-  const [period, setPeriod] = useState<periodTypes>('Monthly')
+  const [plan, setPlan] = useState<planTypes>(currDatas.plan)
+  const [period, setPeriod] = useState<periodTypes>(currDatas.period)
 
   const title = 'Select your plan'
   const description = 'You have the option of monthly or yearly billing.'
-
-  useEffect(() => {
-    setPlan(currDatas.plan)
-    setPeriod(currDatas.period)
-  }, [])
 
   const submitForm = () => {
     // A validation should be done in backend to check if value has been modified
